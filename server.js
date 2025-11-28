@@ -17,7 +17,7 @@ app.use(cors({
 }));
 
 app.use('/', Publico)
-app.use('/', auth, list)
+app.use('/', auth)
 
 
 app.use('/', Publico);
