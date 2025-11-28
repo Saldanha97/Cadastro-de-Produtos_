@@ -11,7 +11,7 @@ const app = express();
 
 
 const allowedOrigins = [
-    'https://cadastro-de-produtos-sable.vercel.app/' 
+    'https://cadastro-de-produtos-sable.vercel.app' 
 ];
 
 app.use(cors({
