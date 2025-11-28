@@ -3,6 +3,8 @@ import cors from 'cors';
 import Publico from './routes/Publico.js';
 import Privadas from './routes/privadas.js';
 import auth from './middlewares/auth.js';
+import dotenv from "dotenv";
+dotenv.config(); 
 
 const app = express();
 
