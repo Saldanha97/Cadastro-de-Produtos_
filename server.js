@@ -11,7 +11,7 @@ const app = express();
 
 
 const allowedOrigins = [
-    'http://localhost:5173' 
+    'https://cadastro-de-produtos-sable.vercel.app/' 
 ];
 
 app.use(cors({
