@@ -6,14 +6,22 @@ import auth from './middlewares/auth.js';
 
 const app = express();
 
+
+
+const allowedOrigins = [
+    'https://cadastro-de-produtos-sable.vercel.app' 
+];
+
 app.use(cors({
-    origin: [
-        "https://cadastro-de-produtos-git-master-saldanha97s-projects.vercel.app",
-        "https://cadastro-de-produtos-5esda07g4-saldanha97s-projects.vercel.app",
-        "https://cadastro-de-produtos-sable.vercel.app",
-    ],
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"]
+    origin: function (origin, callback) {
+        if (!origin) return callback(null, true); 
+        if (allowedOrigins.includes(origin)) {
+            return callback(null, true);
+        } else {
+            return callback(new Error('Origin not allowed by CORS'));
+        }
+    },
+    credentials: true 
 }));
 
 app.use('/', Publico)
