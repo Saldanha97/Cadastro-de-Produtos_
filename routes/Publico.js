@@ -7,7 +7,7 @@ const prisma = new PrismaClient()
 const router = express.Router()
 router.use(express.json())
 
-const jwt = process.env.JWT_SECRET
+const JWT_SECRET = process.env.JWT_SECRET
 
 router.post('/cadastro', async (req, res) => {
 
