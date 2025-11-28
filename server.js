@@ -12,7 +12,8 @@ const app = express();
 
 const allowedOrigins = [
     'https://cadastro-de-produtos-sable.vercel.app',
-    "http://localhost:5173"
+    "http://localhost:5173",
+    "https://teste-teal-mu.vercel.app"
 ];
 
 app.use(cors({
