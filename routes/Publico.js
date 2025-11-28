@@ -1,4 +1,4 @@
-import express, { json } from 'express'
+import express  from 'express'
 import { PrismaClient } from '@prisma/client'
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
@@ -7,7 +7,7 @@ const prisma = new PrismaClient()
 const router = express.Router()
 router.use(express.json())
 
-const JWT_SECRET = process.env.JWT_SECRET
+const jwt = process.env.JWT_SECRET
 
 router.post('/cadastro', async (req, res) => {
 
