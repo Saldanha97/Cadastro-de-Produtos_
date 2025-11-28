@@ -11,7 +11,7 @@ app.use(cors({
         "https://cadastro-de-produtos-git-master-saldanha97s-projects.vercel.app",
         "https://cadastro-de-produtos-5esda07g4-saldanha97s-projects.vercel.app",
         "https://cadastro-de-produtos-sable.vercel.app",
-        "http://localhost:3000"],
+    ],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"]
 }));
