@@ -34,4 +34,36 @@ router.get('/meus-produtos', auth, async (req, res) => {
   }
 });
 
+
+router.put('/produto/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { quantidade } = req.body;
+
+    const produto = await prisma.produto.update({
+      where: { id },
+      data: { quantidade }
+    });
+
+    res.json(produto);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: "Erro ao atualizar produto" });
+  }
+});
+
+
+router.delete('/produto/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    await prisma.produto.delete({ where: { id } });
+    res.json({ message: "Produto excluído com sucesso" });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: "Erro ao excluir produto" });
+  }
+});
+
+
+
 export default router;
